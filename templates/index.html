@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Reminder app</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <style>
+  .column {
+  float: left;
+  width: 30%;
+  padding: 5px;
+}
+
+/* Clear floats after image containers */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+</style>
+</head>
+<body>
+<div class="container" style="padding-top: 8em;padding-left: 8em;">
+  <h1>&nbsp&nbsp&nbsp&nbsp Reminder app</h1>
+  <div class="row" style="padding-top: 3em;">
+    <div class="column">
+  <img src="/static/image.gif"  height="250px" style="width:100%;">
+  
+</div>
+
+<div class="column" style="width:70%;">
+  <form id="form" action="/" method="POST">
+    <div class="form-group">
+      <label for="mobile">Enter your Mobile number:</label>
+      <input type="tel" class="form-control" id="mobile" style="font-size: 20px; width:45%;" placeholder="With country code i.e +91" name="mobile">
+      <br>
+      <label for="body">Enter your reminder note:</label>
+       <textarea name="note" id="note" style="font-size: 20px;width:50%;" cols="5" rows="3" class="form-control input-sm" placeholder="Remind me about..." name="mobile"></textarea>
+    </div>
+    <button type="submit" class="btn btn-default">Submit</button>
+  </form>
+</div>
+</div>
+</div>
+
+</body>
+</html>

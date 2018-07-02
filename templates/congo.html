@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<style>
+html, body {
+  height: 100%;
+}
+
+.jumbotron.vertical-center {
+  margin-bottom: 0; 
+  }
+
+.vertical-center {
+  min-height: 100%;
+  width: 100%;
+}
+
+.container {
+  background-color: gold;
+}
+</style>
+</head>
+<body>
+<div class="jumbotron vertical-center">    
+<div class="container" >
+<h2 class="text-center">Congratulations! Reminder for mobile- {{mobile}} is set</h2>
+<h3 class="text-center">You are receiving reminders since <p id="time"> </p> </h3>
+<h4>Do you wish to stop the service and try out another number?</h4>
+<form id="form" class="form-inline" action="/home" method="POST">
+    <div class="form-group" style="font-size: 20px;padding-bottom: 1em;">
+  <div class="radio">
+      <label><input type="radio" name="optradio" value="1">Yes</label>
+    </div>
+    <div class="radio" style="padding-left: 2em;">
+      <label><input type="radio" name="optradio" value="0">No</label>
+    </div>
+  </div>
+  <br>
+  <input type="submit" class="btn-success" value="Submit" >
+</form>
+</div>
+</div>
+
+<script>
+// Set the date we're counting down to
+var d = new Date();
+var st = d.toLocaleString();
+var countDownDate = new Date(st).getTime();
+var x = setInterval(function() {
+    var now = new Date().getTime();
+    var distance = now - countDownDate;
+    // Time calculations for days, hours, minutes and seconds
+    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    document.getElementById("time").innerHTML =hours + ":hr:"
+    + minutes + "min:" + seconds + "sec";
+}, 1000);
+</script>
+</body>
+</html>
